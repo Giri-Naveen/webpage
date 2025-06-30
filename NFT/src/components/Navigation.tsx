@@ -20,10 +20,10 @@ const navItems = [
 ];
 
 const mobileLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Mint Page', href: '/mint' },
-  { label: 'Coming Soon', href: '/coming-soon' },
-  { label: 'Protected Page', href: '/protected-page' },
+  { label: 'Home', href: '' },
+  //{ label: 'Mint Page', href: '/mint' },
+  { label: 'Pricing', href: '' },
+  //{ label: 'Protected Page', href: '/protected-page' },
   { label: 'Blog', href: '/blog' },
   { label: 'Privacy Policy', href: '/policy/privacy-policy' },
   { label: 'Terms & Conditions', href: '/policy/terms-and-conditions' },
