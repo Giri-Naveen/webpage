@@ -11,7 +11,7 @@ const Footer = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about-us' },
-    { name: 'Services', path: '/services' },
+    { name: 'Services', path: '/work' },
     { name: 'Our Team', path: '/team' },
     { name: 'Contact Us', path: '/contact-us' },
   ];
@@ -24,9 +24,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer data-section data-bg-section className="bg-black w-full text-white md:px-8 lg:px-24 xl:pl-40 xl:pr-10 pt-20 pb-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-        <div className="md:w-[340px] lg:w-[400px]">
+    <footer data-section data-bg-section className="bg-black w-full text-white md:px-8 lg:px-24 xl:pl-40 xl:pr-10 pt-16 pb-8 md:pt-20 md:pb-12">
+      <div className="flex flex-col items-center text-center gap-10 md:grid md:grid-cols-3 md:items-start md:text-left md:gap-20">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left w-[300px] md:w-[340px] lg:w-[400px]">
           <ScrollReveal>
             <Image
               src="/images/white_logo.png" 
@@ -37,15 +37,15 @@ const Footer = () => {
             />
           </ScrollReveal>
 
-          <div className="md:text-[19px] xl:text-[20px] font-sans mt-10 pt-2 md:space-y-8 xl:space-y-6">
+          <div className="text-[19px] md:text-[19px] xl:text-[20px] font-sans mt-4 md:mt-10 md:pt-2 space-y-5 md:space-y-8 xl:space-y-6">
             <ScrollReveal>
-              <div className="flex items-start">
+              <div className="md:flex md:items-start">
                 <span className="min-w-[120px] text-white font-semibold">Address:</span>
                   <a
                   href="https://maps.app.goo.gl/D8C4QPUQiRsu94aa9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[white] leading-relaxed md:text-[15px] xl:text-[16px] cursor-pointer"
+                  className="text-[white] leading-relaxed text-[16px] md:text-[15px] xl:text-[16px] cursor-pointer"
                 >  
                   <p>
                     Devapragasam Trade Centre, <br />
@@ -58,9 +58,9 @@ const Footer = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <div className="flex items-start">
+              <div className="md:flex md:items-start">
                 <span className="min-w-[120px] text-white font-semibold">Contact:</span>
-                <div className="text-[white] leading-relaxed md:text-[15px] xl:text-[16px] space-y-1">
+                <div className="text-[white] leading-relaxed text-[16px] md:text-[15px] xl:text-[16px] space-y-1">
                   <a href="tel:+919876543210" className="block">+91 96000 52850</a>
                   <a href="tel:+919876543210" className="block">+91 98407 52850</a>
                 </div>
@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="md:w-[180px] lg:w-[250px] xl:w-[300px] md:ml-8 lg:ml-14 xl:ml-0">
+        <div className="sm:w-1/2 md:w-[180px] lg:w-[250px] xl:w-[300px] md:ml-8 lg:ml-14 xl:ml-0">
           <div className="space-y-3 text-white mt-4">
             {legalLinks.map((link) => (
               <Link
@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#6E6E6E] md:mt-28 xl:mt-32 pt-6 xl:mr-24">
+      <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#6E6E6E] mt-16 md:mt-28 xl:mt-32 pt-6 xl:mr-24">
         <ScrollReveal>
           <p className="text-[white] md:text-[15px] xl:text-[16px] text-center md:text-left mb-4 md:mb-0">
             © Copyright 2023 - All Rights Reserved.

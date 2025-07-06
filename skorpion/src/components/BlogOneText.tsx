@@ -5,8 +5,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const BlogOneText = () => {
   return (
-    <section data-section className="px-10 md:px-40 py-16 text-black bg-white">
-      <div className="max-w-2xl mx-auto">
+    <section data-section className="px-8 lg:px-24 xl:px-40 pt-16 pb-8 xl:py-16 text-black bg-white">
+      <div className="max-w-7xl xl:max-w-2xl xl:mx-auto">
         <ScrollReveal>
         <p className="text-lg md:text-[22px] leading-9 mb-16">
           Running a successful restaurant is challenging — especially when relying too much on third‑party platforms that charge 
@@ -16,7 +16,7 @@ const BlogOneText = () => {
         </ScrollReveal>
 
         <ScrollReveal>
-        <div className="bg-gray-100 border-l-4 border-[#1ECDFE] py-12 px-16 mb-14">
+        <div className="bg-gray-100 border-l-4 border-[#1ECDFE] py-12 px-4 md:px-16 mb-14">
           <p className="italic text-center text-[18px] text-gray-700">
             "The future belongs to those who digitize their kitchens today." – Inspired by Peter Drucker
           </p>
@@ -116,7 +116,7 @@ const BlogOneText = () => {
           */}
 
           <ScrollReveal>
-          <div className="bg-gray-100 border-l-4 border-[#1ECDFE] py-12 px-16 mb-14">
+          <div className="bg-gray-100 border-l-4 border-[#1ECDFE] py-12 px-4 md:px-16 mb-14">
             <p className="italic text-center text-[18px] text-gray-700">
               "Code your menu, serve your dream." – Inspired by Ada Lovelace
             </p>

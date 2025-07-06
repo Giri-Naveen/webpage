@@ -19,15 +19,15 @@ const services = [
 
 const ServiceOneOthers = () => {
   return (
-    <section data-section className="w-full px-10 md:px-40 py-28 bg-white">
-      <div className="flex items-center justify-between mb-14">
+    <section data-section className="w-full px-10 md:px-8 lg:px-24 xl:px-40 py-28 bg-white">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 md:mb-14 gap-3 md:gap-0">
         <ScrollReveal>
-        <h2 className="text-[42px] font-sans font-semibold">Other services</h2>
+        <h2 className="text-[32px] md:text-[34px] lg:text-[38px] xl:text-[42px] font-sans font-semibold">Other services</h2>
         </ScrollReveal>
         
         <ScrollReveal>
-        <Link href="/services">
-            <div className="group flex items-center space-x-4 text-black text-[13px] font-sans font-medium tracking-widest">
+        <Link href="/work">
+            <div className="group flex items-center space-x-2 md:space-x-4 text-black text-[11px] md:text-[13px] font-sans font-medium tracking-widest">
                 <span>VIEW ALL</span>
                 <span className="ml-8 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
                     <svg
@@ -51,11 +51,11 @@ const ServiceOneOthers = () => {
       </ScrollReveal>    
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14 lg:gap-16 xl:gap-20">
         {services.map((service, index) => (
-          <div key={index} className="border border-gray-300 px-12 py-10 flex flex-col justify-between h-full">
+          <div key={index} className="border border-gray-300 px-6 md:px-8 lg:px-10 xl:px-12 py-10 flex flex-col justify-between h-full">
             <ScrollReveal>
-            <h2 className="text-[26px] font-sans font-semibold leading-tight mb-5">
+            <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-sans font-semibold leading-tight mb-5">
               {service.title.split(" ").slice(0, 2).join(" ")} <br />
               {service.title.split(" ").slice(2).join(" ")}
             </h2>
@@ -71,12 +71,12 @@ const ServiceOneOthers = () => {
 
             <ScrollReveal>
             {service.description ? (
-                <p className="text-[#6E6E6E] text-base font-sans mb-8 max-w-md">
+                <p className="text-[#6E6E6E] text-[14px] md:text-[15px] lg:text-base font-sans mb-8 max-w-md">
                   {service.description}
                 </p>
               ) : (
-                <p className="text-black text-[36px] mx-auto font-semibold mt-56 pt-1 mb-60 max-w-md">
-                  Coming Soon
+                <p className="text-black text-[30px] md:text-[32px] lg:text-[34px] xl:text-[36px] mx-auto text-center font-semibold mt-56 pt-1 mb-60 max-w-md">
+                  Coming Soon...
                 </p>
             )}
             </ScrollReveal>
@@ -86,7 +86,7 @@ const ServiceOneOthers = () => {
               {service.items.map((item, i) => (
                 <li
                   key={i}
-                  className={`border-t border-gray-300 pt-4 uppercase tracking-widest text-black font-sans font-medium text-[13px]
+                  className={`border-t border-gray-300 pt-4 uppercase tracking-widest text-black font-sans font-medium text-[10px] md:text-[12px] lg:text-[13px]
                   ${
                     i === service.items.length - 1 ? 'border-b pb-4' : ''
                   }`}
@@ -100,7 +100,7 @@ const ServiceOneOthers = () => {
             <ScrollReveal>
             <Link href={service.link}>
               <div className="group flex items-center justify-start text-black rounded-full transition">
-                  <span className="font-semibold text-[13px] tracking-widest mr-4">READ MORE</span>
+                  <span className="font-semibold text-[11px] md:text-[13px] tracking-widest mr-2 md:mr-4">READ MORE</span>
                   <span className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
                   <svg
                       className='ml-1'

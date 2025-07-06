@@ -5,6 +5,7 @@ import TeamMemberSection from "@/components/TeamMemberSection";
 import TeamCollabSection from "@/components/TeamCollabSection";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function OurTeam() {
   useEffect(() => {
@@ -16,7 +17,8 @@ export default function OurTeam() {
 
   return (
     <main>
-      <FixedUI /> 
+      <FirstSection />
+      <FixedUI />
       <TeamHeaderSection />
       <TeamMemberSection />
       <TeamCollabSection />

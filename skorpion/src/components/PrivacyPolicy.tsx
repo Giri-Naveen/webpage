@@ -3,8 +3,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const PrivacyPolicy = () => {
   return (
-    <section data-section id='next-section' className="bg-gray-100 flex justify-center items-start pt-12 pb-12 lg:py-20 px-8 md:px-40">
-      <div className="max-w-8xl text-black text-left md:text-justify space-y-4 text-[18px] leading-relaxed">
+    <section data-section id='next-section' className="bg-gray-100 flex justify-center items-start pt-12 pb-16 lg:py-20 px-8 lg:px-24 xl:px-40">
+      <div className="max-w-8xl text-black text-left md:text-justify space-y-3 md:space-y-4 text-[15px] md:text-[18px] leading-relaxed">
 
         <ScrollReveal><h3 className="font-semibold text-2xl">Customer Data Usage</h3></ScrollReveal>
         <ScrollReveal>

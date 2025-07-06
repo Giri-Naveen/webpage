@@ -5,9 +5,9 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const BlogTwoImageSection = () => {
   return (
-    <section data-section className="w-full bg-white px-40 py-6 flex flex-col items-center">
+    <section data-section className="w-full bg-white px-4 md:px-4 lg:px-20 xl:px-40 flex flex-col items-center">
       <div className="max-w-5xl w-full px-4">
-        <div className="relative w-full h-[600px]">
+        <div className="relative w-full h-[300px] md:h-[480px] lg:h-[540px] xl:h-[600px]">
           <Image
             src="/images/blog-2.webp"
             alt="Blog Visual"

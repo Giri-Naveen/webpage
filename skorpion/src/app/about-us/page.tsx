@@ -7,6 +7,7 @@ import PortolioSection from "@/components/PortfolioSection";
 import CollabSection from "@/components/CollabSection";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function AboutUs() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function AboutUs() {
 
   return (
     <main>
+      <FirstSection />
       <FixedUI />
       <AboutUsHeaderSection />
       <OurMissionSection />

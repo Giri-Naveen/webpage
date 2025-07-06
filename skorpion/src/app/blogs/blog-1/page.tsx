@@ -5,6 +5,7 @@ import BlogOneImageSection from "@/components/BlogOneImageSection";
 import BlogOneText from "@/components/BlogOneText";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function BlogOne() {
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function BlogOne() {
   return (
     <main>
       <FixedUI />
+      <FirstSection />
       <BlogOneHeader />
       <BlogOneImageSection />
       <BlogOneText />

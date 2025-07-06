@@ -12,36 +12,31 @@ interface ScrollFadeInProps {
 const ScrollReveal = ({ children, className = '', threshold = 0.5, delay = 0 }: ScrollFadeInProps) => {
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const previousY = useRef<number | null>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (hasAnimated) return;
-
-          const top = entry.boundingClientRect.top;
-          const isInView = entry.isIntersecting;
-          const isScrollingDown = previousY.current !== null && top < previousY.current;
-
-          if (isInView && isScrollingDown) {
-            controls.start('visible');
-            setHasAnimated(true);
-          }
-
-          previousY.current = top;
-        });
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          controls.start('visible');
+          hasAnimated.current = true;
+        }
       },
       { threshold }
     );
 
     observer.observe(node);
+
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      controls.start('visible');
+      hasAnimated.current = true;
+    }
+
     return () => observer.disconnect();
-  }, [controls, threshold, hasAnimated]);
+  }, [controls, threshold]);
 
   return (
     <motion.div

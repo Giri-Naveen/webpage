@@ -7,6 +7,7 @@ import ServiceTwoPricing from "@/components/ServiceTwoPricing";
 import ServiceTwoOthers from "@/components/ServiceTwoOthers";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function ServiceTwo() {
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function ServiceTwo() {
   return (
     <main>
       <FixedUI />
+      <FirstSection />
       <ServiceTwoHeader />
       <ServiceTwoAbout />
       <ServiceTwoWork />

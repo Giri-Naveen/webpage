@@ -7,6 +7,7 @@ import ServiceOnePricing from "@/components/ServiveOnePricing";
 import ServiceOneOthers from "@/components/ServiceOneOthers";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function ServiceOne() {
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function ServiceOne() {
   return (
     <main>
       <FixedUI /> 
+      <FirstSection />
       <ServiceOneHeader />
       <ServiceOneAbout />
       <ServiceOneWork />

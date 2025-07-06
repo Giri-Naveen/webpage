@@ -5,6 +5,7 @@ import MapSection from "@/components/MapSection";
 import MessageSection from "@/components/MessageSection";
 import Footer from "@/components/Footer";
 import FixedUI from "@/components/FixedUI";
+import FirstSection from "@/components/FirstSection";
 
 export default function ContactUs() {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function ContactUs() {
 
   return (
     <main>
+      <FirstSection />
       <FixedUI />
       <ContactSection />
       <MapSection />

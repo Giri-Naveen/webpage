@@ -21,18 +21,18 @@ const Hero = () => {
   }, []);
   
   return (
-    <section data-section id='hero' data-bg-section className="flex flex-row justify-between items-center relative w-full h-screen bg-black text-white overflow-hidden">
+    <section data-section id='hero' data-bg-section className="flex flex-row justify-center md:justify-between items-center relative w-full h-auto xl:h-screen bg-black text-white overflow-hidden">
 
-      <div className="max-w-4xl pl-8 pr-6 md:pl-40 mb-6">
+      <div className="max-w-4xl px-8 md:px-8 lg:px-24 xl:px-40 pt-56 pb-20 md:pt-64 md:pb-24 lg:pt-64 lg:pb-28 xl:pt-0 xl:pb-6">
         <SimpleReveal>
-        <h1 className="text-5xl md:text-[74px] font-sans font-light leading-tight">
+        <h1 className="text-[38px] md:text-[58px] lg:text-[66px] xl:text-[74px] font-sans font-light leading-tight text-center md:text-start">
           <span className="font-semibold">Creating</span> a Better<br />
           <span className="font-semibold">World</span> Tomorrow
         </h1>
         </SimpleReveal>
 
         <SimpleReveal>
-        <p className="mt-14 text-gray-400 max-w-sm text-[15px] leading-relaxed">
+        <p className="mt-10 md:mt-12 xl:mt-14 text-gray-400 max-w-lg xl:max-w-md text-[15px] md:text-[18px] xl:text-[16px] leading-relaxed text-center md:text-start">
           Skorpion delivers seamless digital solutions that enable smarter decisions and stronger 
           growth. We help businesses save time, optimize operations, and stay competitive. With 
           Skorpion, the future is built today. 
@@ -40,11 +40,11 @@ const Hero = () => {
         </SimpleReveal>
 
         <SimpleReveal>
-        <div className="mt-16 flex items-center gap-6">
-          <Link href="/services">
-            <div className="group flex items-center justify-between bg-[#1ECDFE] text-black rounded-full pl-12 pr-4 py-4">
-              <span className="font-semibold text-[13px] tracking-widest">WHAT WE DO</span>
-              <span className="ml-8 w-10 h-10 rounded-full bg-black flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
+        <div className="mt-12 md:mt-14 flex items-center justify-center md:justify-start gap-0">
+          <Link href="/work">
+            <div className="group flex items-center md:justify-between bg-[#1ECDFE] text-black rounded-full pl-8 md:pl-10 xl:pl-12 pr-4 py-2 md:py-3 xl:py-4">
+              <span className="font-semibold text-[11px] md:text-[13px] tracking-widest">WHAT WE DO</span>
+              <span className="ml-4 md:ml-6 xl:ml-8 w-10 h-10 rounded-full bg-black flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
                 <svg
                   className='ml-1'
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,17 +93,17 @@ const Hero = () => {
         </SimpleReveal>
       </div>
 
-      <div className="absolute top-[30%] right-[6%] items-center">
+      <div className="absolute top-[22%] md:top-[20%] md:right-[4%] lg:top-[18%] lg:right-[9%] xl:top-[30%] xl:right-[8%] items-center">
       <SimpleReveal>
         <img
           src="/images/white_logo.png"
           alt="Skorpion Logo"
-          className="w-[350px] h-auto object-contain"
+          className="w-[180px] md:w-[260px] lg:w-[300px] xl:w-[340px] h-auto object-contain"
         />
       </SimpleReveal>
       </div>
 
-      <div className="absolute bottom-[15%] right-[14%] flex items-center justify-center">
+      <div className="hidden md:flex absolute md:mt-[480px] md:right-[7%] lg:mt-[500px] lg:right-[10%] xl:mt-[340px] xl:right-[15%] items-center justify-center">
         <SimpleReveal>
         <div className="relative w-32 h-32 group">
           <div

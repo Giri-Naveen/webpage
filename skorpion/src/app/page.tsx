@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import FirstSection from "@/components/FirstSection";
-import DiscoverSection from "@/components/DiscoverSection";
+import WelcomeSection from "@/components/WelcomeSection";
 import BusinessSection from "@/components/BusinessSection";
 import TeamSection from "@/components/TeamSection";
 import PublicationSection from "@/components/PublicationSection";
@@ -20,9 +20,10 @@ export default function Home() {
 
   return (
     <main>
+      <FirstSection />
       <FixedUI /> 
       <Hero />
-      <DiscoverSection/>
+      <WelcomeSection />
       <BusinessSection />      
       <TeamSection />
       <Testimonials />

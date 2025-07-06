@@ -10,6 +10,12 @@ const ScrollProgressBar = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (docHeight <= 0) {
+        targetProgress.current = 0;
+        return;
+      }
+
       const progress = (scrollTop / docHeight) * 100;
       targetProgress.current = progress;
     };
@@ -30,13 +36,11 @@ const ScrollProgressBar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 right-0 h-full w-[2px] md:w-[3px] lg:[w-4px] xl:w-[5px] bg-black z-[9999]">
+    <div className="fixed top-0 right-0 h-full w-[2px] md:w-[3px] lg:w-[4px] xl:w-[5px] bg-black z-[9999]">
       <div
         ref={barRef}
         className="w-full bg-[#1ECDFE]"
-        style={{
-          height: '0%'
-        }}
+        style={{ height: '0%' }}
       />
     </div>
   );

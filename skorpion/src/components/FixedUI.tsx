@@ -3,6 +3,7 @@ import SimpleReveal from '@/components/SimpleReveal';
 import { useEffect, useState } from 'react';
 import Navigation from './Navigation';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const FixedUI = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -20,12 +21,13 @@ const FixedUI = () => {
     currentPageLabel = 'TEAM';
   } else if (pathname === '/contact-us') {
     currentPageLabel = 'CONTACT';
+  } else if (pathname === '/work') {
+    currentPageLabel = 'SERVICES';
   } else if (pathname.startsWith('/services')) {
     currentPageLabel = 'SERVICES';
   } else if (pathname.startsWith('/blogs')) {
     currentPageLabel = 'BLOG';
-  }
-    else if (pathname.startsWith('/policies')) {
+  } else if (pathname.startsWith('/policies')) {
     currentPageLabel = 'POLICIES';
   }
 
@@ -57,12 +59,14 @@ const FixedUI = () => {
     <div className="hidden xl:block">
       {!navOpen && (
         <SimpleReveal>
+          <Link href="/">
           <div
             id="a-div"
-            className="fixed top-6 left-16 text-[42px] font-semibold font-sans z-50 transition-colors duration-300 mix-blend-difference text-white pointer-events-none"
+            className="fixed top-6 left-16 text-[42px] font-semibold font-sans z-50 transition-colors duration-300 mix-blend-difference text-white cursor-pointer"
           >
             S.
           </div>
+          </Link>
         </SimpleReveal>
       )}
 

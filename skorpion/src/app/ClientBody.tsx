@@ -12,18 +12,18 @@ export const useLoading = () => useContext(LoadingContext);
 export default function ClientBody({ children }: { children: React.ReactNode }) {
   const pathname  = usePathname();
   const firstLoad = useRef(true);
-
-
   const [showSite,setShowSite] = useState(false);
   const [routeAnimating,setRouteAnimating] = useState(false);
 
   useViewportHeight();
+
   useEffect(() => {
     document.body.classList.add('no-scroll');
 
     const t = setTimeout(() => {
       setShowSite(true);
       document.body.classList.remove('no-scroll');
+      window.dispatchEvent(new Event('scroll'));
       firstLoad.current = false;
     }, 4500);
 
@@ -38,11 +38,14 @@ export default function ClientBody({ children }: { children: React.ReactNode }) 
   const handleRouteAnimDone = () => setRouteAnimating(false);
 
   const canShowChildren = showSite && !routeAnimating;
-  const isAnimating     = !showSite || routeAnimating;
+  const isAnimating = !showSite || routeAnimating;
 
   return (
     <LoadingContext.Provider value={{ isAnimating }}>
-      <body className="antialiased bg-black" suppressHydrationWarning>
+      <body
+        className={`antialiased ${pathname.startsWith('/work') ? 'bg-black text-white' : 'bg-white text-black'}`}
+        suppressHydrationWarning
+      >
         <ScrollProgressBar />
 
         {!showSite && <LoadingScreen />}

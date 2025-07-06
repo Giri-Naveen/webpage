@@ -4,14 +4,14 @@ import SimpleReveal from '@/components/SimpleReveal';
 
 const RefundPolicyHeader = () => {
     return (
-    <section id="hero" data-section className="w-full py-28 px-40 flex flex-col items-start bg-black">
+    <section id="hero" data-section className="w-full py-28 px-8 md:px-8 lg:px-24 xl:px-40 flex flex-col items-start bg-black">
       <div className="relative flex w-full mt-10">
         <SimpleReveal>
-          <div className="absolute right-[102%] top-1/2 w-full border-t border-gray-300" />
+          <div className="hidden xl:block absolute right-[102%] top-1/2 w-full border-t border-gray-300" />
         </SimpleReveal>
 
         <SimpleReveal>
-          <div className="bg-black px-0 z-10 text-[14px] whitespace-nowrap">
+          <div className="bg-black mt-6 md:mt-5 xl:mt-0 px-0 z-10 text-[11px] md:text-[14px] whitespace-nowrap">
             <Link href="/" className="text-white tracking-widest font-semibold hover:text-[#1ECDFE]">HOMEPAGE</Link>
             <span className="mx-3 text-white text-base">/</span>
             <span className="text-gray-400 font-semibold cursor-not-allowed tracking-widest">POLICY</span>
@@ -20,20 +20,20 @@ const RefundPolicyHeader = () => {
       </div>
 
       <SimpleReveal>
-        <h1 className="text-6xl md:text-[74px] font-light font-sans text-white text-start mt-16"><span className='font-semibold'>Refund </span></h1>
+        <h1 className="text-[34px] md:text-[64px] lg:text-[69px] xl:text-[74px] font-light font-sans text-white text-start mt-16 md:mt-14 lg:mt-16 leading-[1.0]"><span className='font-semibold'>Refund </span></h1>
       </SimpleReveal>
       <SimpleReveal>
-        <h1 className="text-6xl md:text-[74px] font-light font-sans text-white text-start mt-3"><span className='font-semibold'>Policy</span></h1>
+        <h1 className="text-[34px] md:text-[64px] lg:text-[69px] xl:text-[74px] font-light font-sans text-white text-start mt-2 md:mt-3 xl:mt-3 lg:mt-6 leading-[1.0]"><span className='font-semibold'>Policy</span></h1>
       </SimpleReveal>
 
       <div
          onClick={() => {
             document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
           }} 
-        className="mt-16 pt-1 flex items-center gap-4 cursor-pointer"
+        className="mt-14 md:mt-16 pt-1 flex items-center gap-2 md:gap-4 cursor-pointer"
       >
         <SimpleReveal>
-          <span className="tracking-widest text-[#1ECDFE] text-[13px] font-semibold">LEARN MORE</span>
+          <span className="tracking-widest text-[#1ECDFE] text-[11px] md:text-[13px] font-semibold">LEARN MORE</span>
         </SimpleReveal>
         
         <SimpleReveal>

@@ -20,26 +20,26 @@ const Navigation = ({ onClose }: NavigationProps) => {
   const links = [
     { label: 'Homepage', href: '/' },
     { label: 'About Us', href: '/about-us' },
-    { label: 'Services', href: '/services' },
+    { label: 'Services', href: '/work' },
     { label: 'Our Team', href: '/team' },
     { label: 'Contact Us', href: '/contact-us' },
   ];
 
   return (
     <div className="fixed inset-0 z-30 bg-black text-white px-0 py-0">
-      <div className="absolute pt-10 pl-16 text-[42px] font-semibold font-sans">
+      <div className="absolute pt-5 pl-8 md:pt-4 md:pl-8 lg:pt-6 lg:pl-10 xl:pt-6 xl:pl-16 text-[36px] md:text-[38px] lg:text-[40px] xl:text-[42px] font-semibold font-sans">
         S.
       </div>
 
       <button
         onClick={onClose}
-        className="absolute top-[10%] right-[5%] w-6 h-6 z-40 flex items-center justify-center group"
+        className="absolute top-8 right-9 md:top-8 md:right-9 lg:top-10 lg:right-[44px] xl:top-12 xl:right-16 w-6 h-6 z-40 flex items-center justify-center group"
       >
         <span className="absolute w-7 h-[3px] bg-white rotate-45 group-hover:opacity-80 transition"></span>
         <span className="absolute w-7 h-[3px] bg-white -rotate-45 group-hover:opacity-80 transition"></span>
       </button>
 
-      <div className="mt-24 flex flex-col space-y-4 pl-40 pt-12">
+      <div className="flex flex-col space-y-4 items-center justify-center h-screen">
         {links.map(({ label, href }) => {
           const isActive = pathname === href;
 
@@ -47,7 +47,7 @@ const Navigation = ({ onClose }: NavigationProps) => {
             <Link
               key={label}
               href={href}
-              className={`group flex items-center text-[32px] font-semibold ${
+              className={`group flex items-center text-[24px] md:text-[28px] lg:text-[30px] xl:text-[32px] font-semibold ${
                 isActive ? 'text-[#1ECDFE]' : 'text-gray-300 hover:text-white'
               } transition-colors duration-300`}
             >

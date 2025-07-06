@@ -39,11 +39,11 @@ const teamMembers = [
 
 const TeamMemberSection = () => {
   return (
-    <section data-section id='team-section' className="w-full flex justify-center px-40 py-28 bg-white">
-      <div className="grid grid-cols-3 gap-x-16 gap-y-8">
+    <section data-section id='team-section' className="w-full flex justify-center md:px-4 lg:px-24 xl:px-40 my-24 xl:my-28 bg-white">
+      <div className="grid grid-col-1 gap-10 md:grid-cols-3 md:gap-x-7 md:gap-y-8 lg:gap-x-12 lg:gap-y-[52px] xl:gap-x-16 xl:gap-y-8">
         {teamMembers.map((member, index) => (
           <ScrollReveal key={index}>
-          <div className="w-56 h-72 relative group overflow-hidden rounded-md">
+          <div className="w-[300px] h-[340px] md:w-[230px] lg:w-60 xl:w-56 md:h-72 relative group overflow-hidden rounded-md">
             <Image
               src={member.image}
               alt={member.name}

@@ -16,10 +16,9 @@ const services = [
     items: ["Multiple Logistics Partners", "Branded Solution", "Real-Time Order Tracking", "Seamless Payment & COD", "Regional Language Support"],
     link: "/services/service-2",
   },
-  {
+ {
     title: "",
-    description:
-      "",
+    description: "",
     items: [],
     link: "/",
   },
@@ -27,12 +26,12 @@ const services = [
 
 const OurServiceSection = () => {
   return (
-    <section data-section id="service-section" className="bg-black text-white py-28 px-8 md:px-40">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-28 items-start">
+    <section data-section id="service-section" className="bg-black text-white pt-20 pb-16 md:pb-28 lg:pt-24 lg:pb-28 xl:py-28 px-8 lg:px-24 xl:px-40">
+      <div className="max-w-7xl xl:mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-14 lg:gap-20 xl:gap-28 items-start">
         {services.map((service, index) => (
           <div key={index}> 
             <ScrollReveal>
-            <h2 className="text-[30px] font-sans font-semibold leading-tight mb-7">
+            <h2 className="text-[24px] md:text-[24px] lg:text-[28px] xl:text-[30px] font-sans font-semibold leading-tight mb-7">
               {service.title.split(" ").slice(0, 2).join(" ")} <br />
               {service.title.split(" ").slice(2).join(" ")}
             </h2>
@@ -40,16 +39,16 @@ const OurServiceSection = () => {
 
             <ScrollReveal>
             {/*  
-            <p className="text-[#6E6E6E] text-base font-sans mb-8 max-w-md">
+            <p className="text-[#6E6E6E] text-[15px] lg:text-base font-sans mb-8 max-w-md">
               {service.description}
             </p>
             */}
             {service.description ? (
-                <p className="text-[#6E6E6E] text-base font-sans mb-8 max-w-md">
+                <p className="text-[#6E6E6E] text-[15px] lg:text-base font-sans mb-8 max-w-md">
                   {service.description}
                 </p>
               ) : (
-                <p className="text-white text-[36px] font-semibold mt-56 pt-1 mb-60 max-w-md">
+                <p className="text-white text-[28px] md:text-[30px] lg:text-[32px] xl:text-[36px] font-semibold md:mt-48 lg:mt-52 xl:mt-56 pt-1 mb-60 max-w-md">
                   Coming Soon
                 </p>
             )}
@@ -60,7 +59,7 @@ const OurServiceSection = () => {
               {service.items.map((item, i) => (
                 <li
                   key={i}
-                  className={`border-t border-gray-800 pt-4 uppercase tracking-widest text-[#9B9B9B] font-sans font-medium text-[13px]
+                  className={`border-t border-gray-800 pt-4 uppercase tracking-widest text-[#9B9B9B] font-sans font-medium text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px]
                     ${
                       i === service.items.length - 1 ? 'border-b pb-4' : ''
                     }`}
@@ -74,7 +73,7 @@ const OurServiceSection = () => {
             <Link href={service.link}>
             <ScrollReveal>
               <div className="group flex items-center text-[#1ECDFE] rounded-full transition">
-                  <span className="font-medium text-[13px] tracking-widest mr-4">READ MORE</span>
+                  <span className="font-medium text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] tracking-widest mr-4">READ MORE</span>
                   <span className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
                   <svg
                       className='ml-1'

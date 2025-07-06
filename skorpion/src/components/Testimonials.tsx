@@ -73,31 +73,31 @@ const Testimonials = () => {
   };
 
   return (
-    <section data-section data-bg-section className="bg-gray-100 pt-28 pb-32 text-center px-4">
+    <section data-section data-bg-section className="bg-gray-100 py-24 md:py-24 lg:pt-28 lg:pb-32 text-center px-4">
       <ScrollReveal>
-      <div className="text-right mr-80 text-gray-500 text-base mb-14 relative">
+      <div className="text-center md:text-right md:mr-8 lg:mr-24 xl:mr-80 text-gray-500 text-[14px] md:text-[15px] lg:text-base relative">
         Customer reviews are a valuable source<br />
         of information for both business and customers.
-        <div className="absolute left-[104%] top-1/4 w-[32%] border-t border-gray-500 " />
+        <div className="hidden xl:block absolute left-[104%] top-1/4 w-[32%] border-t border-gray-500 " />
       </div>
       </ScrollReveal>
 
       <ScrollReveal>
-      <h2 className="text-3xl md:text-[68px] font-sans text-black font-light mt-20 mb-12">
+      <h2 className="text-[34px] leading-[1.0] md:text-[44px] lg:text-[56px] xl:text-[68px] font-sans text-black font-light mt-14 md:mt-14 lg:mt-16 mb-2 md:mb-3 lg:mb-4">
         <span className="mb-20"><span className="font-semibold ">Customer</span> Voices:<br /></span>
       </h2>
       </ScrollReveal>
       <ScrollReveal>
-      <h2 className="text-3xl md:text-[68px] font-sans text-black font-light mb-20">
+      <h2 className="text-[34px] leading-[1.0] md:text-[44px] lg:text-[56px] xl:text-[68px] font-sans text-black font-light mb-12 md:mb-16 lg:mb-20">
         <span className="font-semibold ">Hear What</span> They Say!
       </h2>
       </ScrollReveal>
 
       <ScrollReveal>
-      <div className="flex justify-center gap-2 mb-10 flex-wrap">
+      <div className="flex justify-center md:gap-1 lg:gap-2 lg:mb-10 flex-wrap">
         {testimonials.map((t, index) => {
             const isEvenPosition = index % 2 === 1;
-            const verticalOffset = isEvenPosition ? "translate-y-10" : "-translate-y-0";
+            const verticalOffset = isEvenPosition ? "translate-y-0 lg:translate-y-10" : "-translate-y-0";
             const isActive = index === currentIndex;
 
             return (
@@ -116,7 +116,7 @@ const Testimonials = () => {
                     <img
                         src={t.image}
                         alt={t.name}
-                        className="w-24 h-24 rounded-full object-cover object-top border-2 border-gray-100"
+                        className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-cover object-top border-2 border-gray-100"
                     />
                 </div>
             </div>
@@ -126,11 +126,11 @@ const Testimonials = () => {
       </ScrollReveal>
       
       <ScrollReveal>
-      <div className="flex items-center justify-center gap-2 max-w-5xl mx-auto px-14">
+      <div className="flex items-center justify-center md:gap-8 lg:gap-2 max-w-5xl mx-auto px-2 md:px-16 lg:px-14">
         <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className={`w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-xl font-medium transition-transform duration-500
+            className={`w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full bg-gray-300 flex items-center justify-center md:text-lg lg:text-xl font-medium transition-transform duration-500
               ${
                 currentIndex === 0
                   ? "bg-gray-200 cursor-not-allowed opacity-50"
@@ -156,7 +156,7 @@ const Testimonials = () => {
             </span>
         </button>
 
-        <div className="relative w-full max-w-2xl h-[220px] mx-auto overflow-hidden">
+        <div className="relative w-full max-w-2xl min-h-[220px] md:h-[220px] mx-auto overflow-hidden">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
@@ -182,16 +182,16 @@ const Testimonials = () => {
                 x: { type: "tween", ease: "easeInOut", duration: 0.3 },
                 opacity: { duration: 0.2 },
               }}
-              className="absolute top-0 left-0 w-full"
+              className="relative top-0 left-0 w-full"
             >
               <div className="text-center space-y-3 px-4">
-                <h4 className="text-[24px] font-sans font-semibold mt-14 text-black">
+                <h4 className="text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-sans font-semibold mt-12 md:mt-14 text-black">
                   {testimonials[currentIndex].name}
                 </h4>
-                <p className="text-[13px] text-gray-500 font-semibold tracking-widest uppercase">
+                <p className="text-[11px] md:text-[12px] xl:text-[13px] text-gray-500 font-semibold tracking-widest uppercase">
                   {testimonials[currentIndex].company}
                 </p>
-                <p className="text-gray-600 text-[20px] pt-4 leading-relaxed">
+                <p className="text-gray-600 text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] pt-1 md:pt-2 lg:pt-3 xl:pt-4 leading-relaxed">
                   {testimonials[currentIndex].quote}
                 </p>
               </div>
@@ -202,7 +202,7 @@ const Testimonials = () => {
         <button
             onClick={handleNext}
             disabled={currentIndex === testimonials.length - 1}
-            className={`w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-xl font-medium transition-transform duration-500
+            className={`w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full bg-gray-300 flex items-center justify-center md:text-lg lg:text-xl font-medium transition-transform duration-500
               ${
                 currentIndex === testimonials.length - 1
                   ? "bg-gray-200 cursor-not-allowed opacity-50"

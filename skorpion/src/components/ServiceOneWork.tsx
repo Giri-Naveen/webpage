@@ -5,72 +5,83 @@ import Link from "next/link";
 
 const ServiceOneWork = () => {
   return (
-    <section data-section id="next-section" data-bg-section className="flex w-full h-full px-24 py-28 gap-10 bg-gray-100">
-      <div className="w-1/2 h-auto flex flex-col justify-center pl-14">
+    <section
+      data-section
+      id="next-section"
+      data-bg-section
+      className="flex flex-col xl:flex-row w-full h-full px-8 md:px-8 lg:px-24 pt-16 pb-8 md:pt-20 md:pb-14 lg:pt-24 lg:pb-12 xl:py-28 xl:gap-10 bg-gray-100"
+    >
+      <div className="w-full xl:w-1/2 h-auto flex flex-col justify-center xl:pl-14">
         <ScrollReveal>
-        <h2 className="text-[68px] text-black font-sans font-light leading-tight">
-          <span className="block font-semibold">Innaiku.com</span>
-          <span className="block">
-            <span className="text-black">Workflow</span>
-          </span>
-        </h2>
+          <h2 className="text-[38px] md:text-[52px] lg:text-[60px] xl:text-[68px] text-black font-sans font-light leading-tight">
+            <span className="block font-semibold">Innaiku.com</span>
+            <span className="block">
+              <span className="text-black">Workflow</span>
+            </span>
+          </h2>
         </ScrollReveal>
 
-        <div className="mt-10">
-        <ScrollReveal><h3 className="font-semibold text-2xl">Brand Setup</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          We gather your restaurant details — menu, logo, and preferences — to build a fully branded app 
-          that reflects your identity.
-        </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold mt-5 text-2xl">App Development</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          Your app is built with online ordering, integrated payments, and delivery support — tailored 
-          for your restaurant's operations.
-        </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold mt-5 text-2xl">Go Live</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          Your branded app is published on the Play Store. Customers can start placing direct orders from day one.
-        </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold mt-5 text-2xl">Order & Delivery Management</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          You receive and manage orders in real-time through your dashboard. Delivery is handled via trusted 
-          logistics partners.
-        </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold mt-5 text-2xl">Weekly Payouts</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          Every Saturday, your earnings are credited directly to your account — fast, transparent, and hassle-free.
-        </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold mt-5 text-2xl">Marketing & Digital Support</h3></ScrollReveal>
-        <ScrollReveal>
-        <p className="mt-[10px]">
-          We help promote your app with creative campaigns, offers, and digital strategies to grow your customer base 
-          and boost visibility.
-        </p>
-        </ScrollReveal>
+        <div className="mt-3 md:mt-6 xl:mt-10">
+          {[
+            {
+              title: "Brand Setup",
+              desc: `We gather your restaurant details — menu, logo, and preferences — 
+              to build a fully branded app that reflects your identity.`,
+            },
+            {
+              title: "App Development",
+              desc: `Your app is built with online ordering, integrated payments, 
+              and delivery support — tailored for your restaurant's operations.`,
+            },
+            {
+              title: "Go Live",
+              desc: `Your branded app is published on the Play Store. Customers can 
+              start placing direct orders from day one.`,
+            },
+            {
+              title: "Order & Delivery Management",
+              desc: `You receive and manage orders in real-time through your dashboard. 
+              Delivery is handled via trusted logistics partners.`,
+            },
+            {
+              title: "Weekly Payouts",
+              desc: `Every Saturday, your earnings are credited directly to your account — 
+              fast, transparent, and hassle-free.`,
+            },
+            {
+              title: "Marketing & Digital Support",
+              desc: `We help promote your app with creative campaigns, offers, and digital 
+              strategies to grow your customer base and boost visibility.`,
+            },
+          ].map((item, index) => (
+            <div key={index} className="mt-6">
+              <ScrollReveal>
+                <h3 className="font-semibold text-[20px] md:text-[21px] lg:text-[24px] xl:text-[22px] ">{item.title}</h3>
+              </ScrollReveal>
+              <ScrollReveal>
+                <p className="mt-2 md:mt-2 lg:mt-4 xl:mt-2 text-[14px] md:text-[15px] lg:text-[18px] xl:text-[16px] text-gray-800">{item.desc}</p>
+              </ScrollReveal>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="w-1/2 pl-12 pr-16 pt-10">
+      <div className="w-full xl:w-1/2 xl:pl-12 xl:pr-16 md:pt-10 lg:pt-6">
         <ScrollReveal>
-          <div className="relative w-full h-[800px]">
+          <div className="relative w-full h-[400px] hidden md:block lg:block md:h-[500px] lg:h-[600px] xl:hidden">
+            <Image
+              src="/images/work1.jpg"
+              alt="Mobile Image"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          <div className="relative w-full h-[800px] block md:hidden lg:hidden xl:block">
             <Image
               src="/images/service1.jpg"
-              alt="Image 1"
+              alt="Desktop Image"
               fill
               className="object-contain"
               priority

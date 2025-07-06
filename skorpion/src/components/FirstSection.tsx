@@ -2,6 +2,7 @@
 import SimpleReveal from '@/components/SimpleReveal';
 import { useState } from 'react';
 import Navigation from './Navigation';
+import Link from 'next/link';
 
 const FirstSection = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -9,11 +10,13 @@ const FirstSection = () => {
   return (
     <>
       {!navOpen && (
-        <div className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 md:px-8 md:py-4 lg:px-10 lg:py-6 bg-black z-50 xl:hidden">
+        <div className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 md:px-8 md:py-4 lg:px-10 lg:py-4 bg-black z-50 xl:hidden">
           <SimpleReveal>
-            <div className="text-[38px] md:text-[38px] lg:text-[40px] font-semibold text-white">
+            <Link href="/">
+            <div className="text-[38px] md:text-[38px] lg:text-[40px] font-semibold text-white cursor-pointer">
               S.
             </div>
+            </Link>
           </SimpleReveal>
 
           <SimpleReveal>
