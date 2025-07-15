@@ -24,7 +24,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer data-section data-bg-section className="bg-black w-full text-white md:px-8 lg:px-24 xl:pl-40 xl:pr-10 pt-16 pb-8 md:pt-20 md:pb-12">
+    <footer data-section data-bg-section className="bg-black w-full text-white md:px-8 lg:px-24 xl:pl-40 xl:pr-10 pt-16 pb-8 md:pt-20 md:pb-8">
       <div className="flex flex-col items-center text-center gap-10 md:grid md:grid-cols-3 md:items-start md:text-left md:gap-20">
         <div className="flex flex-col items-center text-center md:items-start md:text-left w-[300px] md:w-[340px] lg:w-[400px]">
           <ScrollReveal>
