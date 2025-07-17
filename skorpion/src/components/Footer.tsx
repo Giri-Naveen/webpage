@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#6E6E6E] mt-16 md:mt-28 xl:mt-32 pt-6 xl:mr-24">
+      <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#6E6E6E] mt-16 md:mt-28 xl:mt-36 pt-6 xl:mr-24">
         <ScrollReveal>
           <p className="text-[white] md:text-[15px] xl:text-[16px] text-center md:text-left mb-4 md:mb-0">
             © Copyright 2023 - All Rights Reserved.
