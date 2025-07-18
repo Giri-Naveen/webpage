@@ -52,7 +52,7 @@ const HowToMint = () => {
           </p>
 
           <button
-            onClick={() => window.location.href = ''} 
+            onClick={() => window.location.href = '/nft-main'} 
             className="mt-9 text-white px-8 py-3 tracking-wide text-[13px] md:text-[14px] xl:text-[15px] rounded-[8px]"
              style={{
                 border: '3px solid blue',

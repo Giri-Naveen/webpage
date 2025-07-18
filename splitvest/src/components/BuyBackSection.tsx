@@ -31,7 +31,7 @@ const BuyBackSection = () => {
            After a holding period of 5 years, the company promises to buy back all NFT shares associated with a 
            property at the prevailing market value of that property at the time of buyback. This ensures investors 
            can exit their investment even if there is no buyer in the secondary market. The buyback amount will be 
-           subject to a 5% royalty fee and a 9% registration charge, which will be deducted from the final payout. 
+           subject to a 5% royalty fee which will be deducted from the final payout. 
            This guarantee protects investor interests while ensuring transparency and liquidity in the long term.
           </p>
         </div>
