@@ -51,7 +51,7 @@ export default function MintHeader() {
   return (
     <section className="min-h-screen bg-transparent px-6 md:px-8 xl:px-24 mt-1 pt-44 pb-10 text-white">
       <div className="max-w-[1400px] mx-auto grid xl:grid-cols-[560px_1fr] gap-10 md:gap-14 xl:gap-16 items-stretch rounded-[8px]">
-        <div className="min-h-[200px] rounded-[8px] overflow-hidden border border-[#B4B4CC] shadow-xl p-5">
+        <div className="min-h-[500px] rounded-[8px] overflow-hidden border border-[#B4B4CC] shadow-xl p-5">
           <MediaRenderer
             client={client}
             src={contractMetadata?.image}
@@ -61,7 +61,7 @@ export default function MintHeader() {
 
         <div className="flex flex-col xl:mt-10">
           <h2
-            className="text-start text-[32px] md:text-[36px] xl:text-[38px] font-normal tracking-wide leading-[1.0]"
+            className="xl:mt-2 text-start text-[32px] md:text-[36px] xl:text-[38px] font-normal tracking-wide leading-[1.0]"
             style={{ color: '#e8d2ff' }}
           >
             Mint Page

@@ -1,3 +1,4 @@
+'use client';
 import React, {useState} from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
@@ -13,11 +14,11 @@ const HowToMint = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="text-white pb-16">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-[375px_1fr] gap-x-14 px-4 md:px-24">
+    <section className="text-white mt-1">
+      <div className="max-w-7xl mx-auto flex flex-col xl:grid xl:grid-cols-[375px_1fr] gap-14 md:gap-16 xl:gap-x-14 px-6 md:px-8 xl:px-24">
         <div>
           <h2
-            className="text-left text-3xl md:text-[38px] font-normal tracking-wide"
+            className="text-left text-[36px] md:text-[38px] font-normal tracking-wide leading-[1.0]"
             style={{ color: '#e8d2ff' }}
           >
             How to Mint
@@ -29,25 +30,14 @@ const HowToMint = () => {
             </div>
           </div>
 
-          {/*}
-          <p className="mt-6 text-[17px] tracking-wide text-[#B4B4CC]">
-            As the first hero of the Meta Legends, collection has over 9,999 unique skins drawn from the different 
-            missions and challenges he faced throughout his life.
-          </p>
-
-          <p className="mt-6 text-[17px] tracking-wide text-[#B4B4CC]">
-            The artwork has been hand-drawn by Robert Green in the traditional anime style and composited by Layla Efiyo.
-          </p>
-          */}
-
-          <p className="mt-6 text-[17px] tracking-wide text-[#B4B4CC]">
+          <p className="mt-6 text-[16px] md:text-[17px] tracking-wide text-[#B4B4CC]">
             To mint your NFT on Splitvest, you first need to buy PolyToken (MATIC), which is the cryptocurrency used on the 
             Polygon blockchain. You can purchase MATIC from any trusted crypto exchange such as Binance, or even through a local 
             trusted exchanger near you. Once you have the tokens, transfer them to your MetaMask wallet. If you don’t have MetaMask, 
             you can install it as a browser extension or mobile app and make sure it's set to the Polygon (MATIC) network.
           </p>
 
-          <p className="mt-6 text-[17px] tracking-wide text-[#B4B4CC]">
+          <p className="mt-6 text-[16px] md:text-[17px] tracking-wide text-[#B4B4CC]">
             After transferring your tokens, go to the Splitvest website and connect your MetaMask wallet. Once connected, choose the 
             property and select the number of NFT units (which represent fractional ownership in the property) you want to buy. 
             Click "Mint" and confirm the transaction in MetaMask. After a few moments, you’ll receive your NFTs directly in your 
@@ -55,14 +45,15 @@ const HowToMint = () => {
             to earn monthly rental income!
           </p>
           
-          <p className="mt-6 text-[17px] tracking-wide text-[#B4B4CC]">
+          <p className="mt-6 text-[16px] md:text-[17px] tracking-wide text-[#B4B4CC]">
             Splitvest lets you co-own premium real estate through fractional shares backed by blockchain. Earn 
             rental income, enjoy appreciation, and skip the hassles of property management. It’s a smart, 
             transparent, and accessible way to grow long-term wealth in real estate.
           </p>
 
-          <button 
-            className="mt-8 text-white px-8 py-3 tracking-wide text-[15px] rounded-[8px]"
+          <button
+            onClick={() => window.location.href = ''} 
+            className="mt-9 text-white px-8 py-3 tracking-wide text-[13px] md:text-[14px] xl:text-[15px] rounded-[8px]"
              style={{
                 border: '3px solid blue',
                 color: '#ffffff',
@@ -73,14 +64,14 @@ const HowToMint = () => {
         </div>
 
         <div className="flex flex-col space-y-6">
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-8 xl:gap-10">
             {steps.map((step, idx) => (
                 <div key={idx} className="relative px-5 py-5 rounded-[8px] border-opacity-30 border border-[#b4b4cc] bg-transparent">
-                <div className="rounded-[8px] bg-[#29144a] px-12 py-8 text-start h-full">
-                    <div className="text-transparent mt-2 text-[44px] bg-clip-text bg-gradient-to-br from-fuchsia-500 to-purple-500">
+                <div className="rounded-[8px] bg-[#29144a] px-10 md:px-12 py-8 text-start h-full">
+                    <div className="text-transparent mt-2 text-[38px] md:text-[40px] lg:text-[42px] xl:text-[44px] bg-clip-text bg-gradient-to-br from-fuchsia-500 to-purple-500">
                     {step.number}
                     </div>
-                    <div className="text-[16px] text-[#b4b4cc] tracking-wide uppercase leading-normal mb-6">
+                    <div className="text-[14px] md:text-[15px] lg:text-[16px] text-[#b4b4cc] tracking-wide uppercase leading-normal mb-6">
                     {step.title}
                     </div>
                 </div>
@@ -88,19 +79,19 @@ const HowToMint = () => {
             ))}
           </div>
 
-          <div className="relative pt-8 overflow-hidden shadow-2xl">
+          <div className="relative pt-4 md:pt-8 w-full overflow-hidden shadow-2xl">
             <Image
-              src="/images/thumbnail.png"
+              src="/images/thumbnail-1.jpg"
               alt="Mint Video"
-              width={800}
-              height={450}
-              className="w-full h-auto object-cover rounded-[8px]"
+              width={2000}
+              height={600}
+              className="w-[full] md:h-[420px] lg:h-[520px] xl:h-[410px] object-cover rounded-[8px]"
             />
             <button
               onClick={() => setIsModalOpen(true)}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             >
-              <div className="group relative w-[120px] h-[120px] flex items-center justify-center">
+              <div className="group relative w-[80px] h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] flex items-center justify-center">
                 <svg
                   className="absolute w-full h-full rotate-[-90deg] pointer-events-none"
                   viewBox="0 0 120 120"
@@ -122,7 +113,7 @@ const HowToMint = () => {
                 </svg>
 
                 <div className="bg-white/10 p-4 rounded-full z-10">
-                  <Play className="text-white w-20 h-20" />
+                  <Play className="text-white w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20" />
                 </div>
               </div>
             </button>

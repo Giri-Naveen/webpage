@@ -4,13 +4,6 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
-import {
-  useCreateAccount,
-  useConnect,
-  useDisconnect,
-  metamaskWallet, 
-} from "@thirdweb-dev/react";
-
 
 const navItems = [
   { label: 'Home', targetId: '' },
@@ -22,24 +15,20 @@ const navItems = [
 
 const mobileLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Mint Page', href: '/mint' },
+  { label: 'Mint Page', href: '/nft-main' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Coming Soon', href: '/coming-soon' },
-  { label: 'Protected Page', href: '/protected-page' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Privacy Policy', href: '/policy/privacy-policy' },
-  { label: 'Terms & Conditions', href: '/policy/terms-and-conditions' },
-  { label: 'Cookies', href: '/policy/cookies' },
+  { label: 'Blog', href: '/blogs' },
+  { label: 'Privacy Policy', href: '/policies/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/policies/terms&conditions' },
+  { label: 'Cookies', href: '/policies/cookies' },
 ];
-
 
 const Navigation = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const account = useActiveAccount();
-  const connect = useConnect();
-  const disconnect = useDisconnect();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +64,11 @@ const Navigation = () => {
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      router.push(`/?section=${targetId}`);
+      if (targetId === '') {
+        router.push('/');
+      } else {
+        router.push(`/?section=${targetId}`);
+      }
     }
   };
 
@@ -84,18 +77,18 @@ const Navigation = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out
         border-b ${
           scrolled
-            ? 'bg-[#150e1d] shadow-md py-[17px] border-b-[#B4B4CC] border-opacity-30'
-            : 'bg-transparent py-6 border-transparent'
+            ? 'bg-[#150e1d] shadow-md py-[17px] border-b-[#B4B4CC] border-opacity-30 hidden xl:block'
+            : 'bg-transparent py-5 md:py-8 lg:py-7 xl:py-6 border-transparent'
         }`}
     >
 
-      <nav className="w-full mx-auto flex items-center justify-between px-8">
-        <div className="flex items-center gap-1">
+      <nav className="w-full mx-auto flex items-center justify-between px-4 md:px-8">
+        <div className="flex items-center md:gap-1">
           <button
             onClick={toggleMobileMenu}
-            className="w-14 h-14 rounded-full bg-black flex items-center justify-center hover:shadow-[0_0_15px_#a400ff]"
+            className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-black flex items-center justify-center hover:shadow-[0_0_15px_#a400ff]"
           >
-            <Menu className="text-white w-6 h-6" />
+            <Menu className="text-white w-5 h-5 md:w-[22px] md:h-[22px] lg:w-6 lg:h-6" />
           </button>
           <div>
             <Image
@@ -103,43 +96,34 @@ const Navigation = () => {
               alt="Meta Portal Logo"
               width={120}
               height={40}
-              className="h-auto w-[150px]"
+              className="h-auto w-[120px] md:w-[130px] lg:w-[140px] xl:w-[150px]"
             />
           </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden xl:flex items-center gap-10">
           {navItems.map(({ label, targetId }) => (
             <a
               key={label}
               onClick={() => handleNavClick(targetId)}
-              className="text-white text-[18px] hover:text-blue-500 transition cursor-pointer"
+              className="text-white text-[18px] relative cursor-pointer transition-colors duration-300 hover:text-blue-500 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
             >
               {label}
             </a>
           ))}
         </div>
 
-        <div className="hidden md:flex">
-          {account ? (
-            <button
-              onClick={disconnect}
-              className="px-6 py-2 bg-blue-700 text-white text-sm rounded-lg hover:bg-blue-800"
-            >
-              {account.address.slice(0, 6)}...{account.address.slice(-4)} (Disconnect)
-            </button>
-          ) : (
-            <button
-              onClick={() => connect(metamaskWallet())}
-              className="px-8 py-[12px] text-white text-[14px] tracking-wide rounded-[8px]"
-              style={{
-                border: '3px solid blue',
-                color: '#ffffff',
-              }}
-            >
-              CONNECT TO WALLET
-            </button>
-          )}
+        <div className="flex">
+          <button
+            onClick={() => window.location.href = '/nft-main'} 
+            className="px-4 py-3 md:px-8 md:py-[11px] text-white text-[12px] md:text-[14px] tracking-wider rounded-[8px] uppercase"
+            style={{
+              border: '3px solid blue',
+              color: '#ffffff',
+            }}
+          >
+            Mint Now
+          </button>
         </div>
       </nav>
 
@@ -152,36 +136,38 @@ const Navigation = () => {
       >
         {/* Side drawer */}
         <div
-          className={`h-full bg-[#0e0b10] w-[80%] sm:w-[40%] md:w-[30%] transform transition-transform duration-300 ${
+          className={`h-full overflow-y-auto overscroll-contain bg-[#0e0b10] md:w-[50%] lg:w-[40%] xl:w-[30%] transform transition-transform duration-300 ${
             mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex flex-col h-full px-6 py-8">
-            <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col h-full px-6 py-6 md:py-8">
+            <div className="flex justify-between items-center">
               <div>
                 <Image
                   src="/images/logo.png"
                   alt="Meta Portal Logo"
                   width={120}
                   height={40}
-                  className="h-auto w-auto"
+                  className="h-auto w-[120px] md:w-[130px] lg:w-[140px] xl:w-[150px]"
                 />
               </div>
-              <button onClick={toggleMobileMenu} className="text-white text-3xl">
+              <button onClick={toggleMobileMenu} className="text-white text-[30px] md:text-[34px]">
                 ×
               </button>
             </div>
 
-            <div className="flex flex-col space-y-6 mt-6">
+            <div className="flex-1 flex flex-col space-y-4 md:space-y-6 lg:mt-8 items-center justify-center">
               {mobileLinks.map(({ label, href }) => (
                 <Link
                   key={label}
                   href={href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white mt-10 text-center text-lg font-medium hover:text-blue-500 transition"
+                  className="text-center"
                 >
-                  {label}
+                  <span className="relative inline-block text-white md:text-[18px] font-medium transition-colors duration-300 hover:text-blue-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
+                    {label}
+                  </span>
                 </Link>
               ))}
             </div>

@@ -39,9 +39,8 @@
 
 @layer base {
   :root {
-    /* Discovery Land Theme Colors */
-    --background: 40 33% 98%; /* light cream background */
-    --foreground: 0 0% 7%; /* near black text */
+    --background: 40 33% 98%;
+    --foreground: 0 0% 7%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 7%;
@@ -49,16 +48,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
 
-    --primary: 204 27% 24%; /* navy blue */
+    --primary: 204 27% 24%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 42 34% 65%; /* gold accent */
+    --secondary: 42 34% 65%;
     --secondary-foreground: 0 0% 7%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 8% 46%;
 
-    --accent: 167 47% 51%; /* teal accent */
+    --accent: 167 47% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -110,6 +109,7 @@
   html, body {
   @apply text-foreground;
   background: radial-gradient(circle at center, #2b015c, #0e0b1f);
+  /* background-color: #150e1d; */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -221,7 +221,7 @@
     transform: perspective(800px) rotateY(0deg);
   }
   50% {
-    transform: perspective(800px) rotateY(-30deg);
+    transform: perspective(800px) rotateY(-50deg);
   }
   100% {
     transform: perspective(800px) rotateY(0deg);
@@ -239,3 +239,9 @@
   display: inline-block;
 }
 
+@media (max-width: 419px) {
+  .four-in-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
