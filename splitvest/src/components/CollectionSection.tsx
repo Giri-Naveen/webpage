@@ -134,7 +134,7 @@ const CollectionSection =() => {
         </p>
 
         <button 
-            className="mt-12 xl:mt-10 px-8 xl:px-7 py-3 text-[13px] md:text-[14px] xl:text-[15px] tracking-wide rounded-[8px] hover:bg-purple-800 transition"
+            className="mt-12 xl:mt-10 px-8 xl:px-7 py-3 text-[13px] md:text-[14px] xl:text-[15px] tracking-wide rounded-[8px] transition"
             style={{
                 border: '3px solid blue',
                 color: '#ffffff',

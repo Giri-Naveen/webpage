@@ -102,8 +102,9 @@ const LatestBlogs = () => {
       </div>
 
       <div className="mt-8 flex flex-col xl:flex-row items-center gap-6 md:gap-8 xl:gap-10">
-        <button 
-            className="w-full py-7 rounded-[8px] text-[#d8d8f6] text-[14px] md:text-[15px] xl:text-[16px] tracking-wide hover:bg-[#d24fff]/10 transition-all"
+        <button
+             onClick={() => window.location.href = '/blogs'} 
+            className="w-full py-7 rounded-[8px] text-[#d8d8f6] text-[14px] md:text-[15px] xl:text-[16px] tracking-wide transition-all"
             style={{
               border: '3px solid blue',
               color: '#ffffff',
