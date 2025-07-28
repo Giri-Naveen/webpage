@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import CookieSection from "@/components/CookieSection"
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function Cookies() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';

@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const articles = [
   {
@@ -9,6 +10,7 @@ const articles = [
     date: 'August 09, 2022',
     category: 'Splitvest',
     comments: '4 Comments',
+    link: '/blogs/blog-1'
   },
   {
     id: '02',
@@ -16,6 +18,7 @@ const articles = [
     date: 'August 09, 2022',
     category: 'Splitvest',
     comments: '4 Comments',
+    link: '/blogs/blog-2'
   },
   {
     id: '03',
@@ -23,6 +26,7 @@ const articles = [
     date: 'August 09, 2022',
     category: 'Splitvest',
     comments: '4 Comments',
+    link: '/blogs/blog-3'
   },
   {
     id: '04',
@@ -30,6 +34,7 @@ const articles = [
     date: 'August 09, 2022',
     category: 'Splitvest',
     comments: '4 Comments',
+    link: '/blogs/blog-4'
   },
 ];
 
@@ -53,15 +58,21 @@ const LatestBlogs = () => {
                 01
           </div>
           <p className="text-[17px] md:text-[18px] text-gray-400 mt-4">{articles[0].date} / {articles[0].category} / {articles[0].comments}</p>
-          <h3 className="cursor-pointer hover:text-blue-500 text-[28px] md:text-[29px] lg:text-[30px] font-light mt-3 md:mt-3 lg:mt-2 xl:mt-1 leading-tight">{articles[0].title}</h3>
-          <Image
-            src="images/blog-1.jpg"
-            alt="Article"
-            width={600}
-            height={380}
-            className="w-full h-auto rounded-xl mt-8 object-cover"
-          />
-          <div className="flex items-center space-x-2 md:space-x-3 xl:space-x-4 mt-7 cursor-pointer">
+          <Link href={articles[0].link}>
+            <h3 className="cursor-pointer hover:text-blue-500 text-[28px] md:text-[29px] lg:text-[30px] font-light mt-3 md:mt-3 lg:mt-2 xl:mt-1 leading-tight">{articles[0].title}</h3>
+          </Link>
+          
+          <Link href={articles[0].link}>
+            <Image
+              src="images/blog-1.jpg"
+              alt="Article"
+              width={600}
+              height={380}
+              className="w-full h-auto rounded-xl mt-8 object-cover"
+            />
+          </Link>
+
+          <Link href={articles[0].link} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4 mt-7 cursor-pointer">
             <div
                 className="bg-[#b4b4cc] h-[2px] w-24 transition-all duration-500 origin-right group-hover:w-14"
             ></div>
@@ -70,7 +81,7 @@ const LatestBlogs = () => {
             >
                 READ MORE
             </span>
-         </div>
+         </Link>
         </div>
 
         <div className="flex flex-col gap-9">
@@ -84,8 +95,14 @@ const LatestBlogs = () => {
               </div>
               
               <p className="text-[17px] md:text-[18px] text-gray-400 mt-4">{article.date} / {article.category} / {article.comments}</p>
-              {article.title && <h4 className="cursor-pointer hover:text-blue-500 text-[28px] md:text-[29px] lg:text-[30px] font-light mt-3 md:mt-3 lg:mt-2 xl:mt-1 leading-tight">{article.title}</h4>}
 
+              {article.title &&
+                <Link href={article.link}>
+                  <h4 className="cursor-pointer hover:text-blue-500 text-[28px] md:text-[29px] lg:text-[30px] font-light mt-3 md:mt-3 lg:mt-2 xl:mt-1 leading-tight">{article.title}</h4>
+                </Link>
+              }
+
+              <Link href={article.link}>
               <div className="flex items-center space-x-2 md:space-x-3 xl:space-x-4 mt-5 md:mt-5 xl:mt-7 cursor-pointer">
                 <div
                     className="bg-[#b4b4cc] h-[2px] w-24 transition-all duration-500 origin-right group-hover:w-14"
@@ -96,6 +113,7 @@ const LatestBlogs = () => {
                     READ MORE
                 </span>
              </div>
+             </Link>
             </div>
           ))}
         </div>

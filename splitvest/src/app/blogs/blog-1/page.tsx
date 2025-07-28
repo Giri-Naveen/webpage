@@ -1,10 +1,12 @@
 'use client';
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import ComingSoonSection from "@/components/ComingSoonSection"
+import BlogOneImage from "@/components/BlogOneImage";
+import BlogOneContent from "@/components/BlogOneContent";
+import BlogOneOther from "@/components/BlogOneOther";
 import Footer from "@/components/Footer";
 
-export default function ComingSoon() {
+export default function BlogOne() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -15,7 +17,9 @@ export default function ComingSoon() {
   return (
     <main>
       <Navigation />
-      <ComingSoonSection />
+      <BlogOneImage />
+      <BlogOneContent />
+      <BlogOneOther />
       <Footer />
     </main>
   );

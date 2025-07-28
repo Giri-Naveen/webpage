@@ -5,7 +5,7 @@ import MintHeader from "@/components/MintHeader";
 import MintSection from "@/components/MintSection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function NftMain() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';

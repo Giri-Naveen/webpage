@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function Policy() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';

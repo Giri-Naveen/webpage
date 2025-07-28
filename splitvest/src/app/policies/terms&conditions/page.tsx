@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import TermsandConditions from "@/components/TermsandConditions";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function Terms() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';

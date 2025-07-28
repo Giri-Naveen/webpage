@@ -15,7 +15,7 @@ const navItems = [
 
 const mobileLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Mint Page', href: '/nft-main' },
+  // { label: 'Mint Page', href: '/nft-main' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Coming Soon', href: '/coming-soon' },
   { label: 'Blog', href: '/blogs' },

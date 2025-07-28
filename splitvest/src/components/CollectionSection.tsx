@@ -133,6 +133,7 @@ const CollectionSection =() => {
             secure blockchain-backed ownership with flexible exit options.
         </p>
 
+        {/*
         <button 
             className="mt-12 xl:mt-10 px-8 xl:px-7 py-3 text-[13px] md:text-[14px] xl:text-[15px] tracking-wide rounded-[8px] transition"
             style={{
@@ -142,9 +143,11 @@ const CollectionSection =() => {
         >
             SEE ALL COLLECTION
         </button>
+
+        */}
       </div>
 
-      <div className="flex items-center justify-center w-full mt-36 pt-2">
+      <div className="flex items-center justify-center w-full mt-36">
         <div className="flex-1 h-px bg-[#b4b4cc] opacity-40" />
 
         <div className="flex items-center gap-3 px-6">
