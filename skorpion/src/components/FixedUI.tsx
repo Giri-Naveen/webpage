@@ -84,7 +84,7 @@ const FixedUI = () => {
         <>
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed right-[4.5%] top-[62%] z-50 cursor-pointer select-none"
+            className="fixed right-[4.4%] top-[62.5%] z-50 cursor-pointer select-none"
           >
             <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white text-black mix-blend-difference">
               <span className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center transition-transform duration-500 ease-in group-hover:scale-[115%]">
@@ -108,7 +108,7 @@ const FixedUI = () => {
           </div>
 
           <div
-            className="fixed right-[2%] top-[calc(62%+90px)] text-[14px] tracking-widest -rotate-90 mix-blend-difference text-white z-50 pointer-events-none"
+            className="fixed right-[2%] top-[calc(62%+91px)] text-[14px] tracking-widest -rotate-90 mix-blend-difference text-white z-50 pointer-events-none"
             style={{ isolation: 'isolate' }}
           >
             BACK TO TOP

@@ -1,26 +1,71 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 
-const TermsAndConditions = () => {
+type ShopData = {
+  shopName: string;
+  websiteUrl: string;
+  email: string;
+  phoneNumber: string;
+};
+
+type ShopTermsSectionProps = {
+  shopName: string;
+};
+
+const ShopTermsSection = ({ shopName }: ShopTermsSectionProps) => {
+  const [shopData, setShopData] = useState<ShopData | null>(null);
+
+  useEffect(() => {
+  if (shopName) {
+    fetch(`https://api.skorpion.in/fetchShopDetails?shopName=${shopName}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data?.shopName) {
+          setShopData({
+            shopName: data.shopName,
+            websiteUrl: `https://www.${data.shopName}.com`,
+            email: data.mail,
+            phoneNumber: data.contactNumber,
+          });
+        } else {
+          console.error("Invalid response from API");
+        }
+      })
+      .catch(err => {
+        console.error("Error fetching company data:", err);
+      });
+  }
+}, [shopName]);
+
+  if (!shopData) return <p>No Shop Data</p>;
+
+  const { shopName: name, websiteUrl } = shopData;
+
   return (
-    <section data-section id='next-section' className="bg-gray-100 flex justify-center items-start pt-12 pb-16 lg:py-20 px-8 lg:px-24 xl:px-40">
-      <div className="max-w-8xl text-black text-left md:text-justify space-y-3 md:space-y-4 text-[15px] md:text-[18px] leading-relaxed">
+    <section
+      data-section
+      id="next-section"
+      className="bg-gray-100 flex justify-center items-start pt-12 pb-16 lg:py-20 px-8 lg:px-24 xl:px-40"
+    >
+      <div className="max-w-7xl text-black text-left md:text-justify space-y-4 text-[15px] md:text-[18px] leading-relaxed">
+        <ScrollReveal>
+          <p>Welcome to {name}!</p>
+        </ScrollReveal>
+
         <ScrollReveal>
           <p>
-          Welcome to Skorpion Digi Solutions!
+            These terms and conditions outline the rules and regulations for the use of {name}'s Website,
+            located at{' '}
+            <a href={websiteUrl} className="text-blue-600">
+              {websiteUrl}
+            </a>
           </p>
         </ScrollReveal>
 
         <ScrollReveal>
           <p>
-            These terms and conditions outline the rules and regulations for the use of Skorpion Digi Solutions's Website, 
-            located at <a href="https://www.skorpion.in" className="text-blue-600">https://www.skorpion.in</a>
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <p>
-            By accessing this website we assume you accept these terms and conditions. Do not continue to use Skorpion Digi Solutions 
+            By accessing this website we assume you accept these terms and conditions. Do not continue to use {name}
             if you do not agree to take all of the terms and conditions stated on this page.
           </p>
         </ScrollReveal>
@@ -35,52 +80,55 @@ const TermsAndConditions = () => {
             the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to prevailing 
             law of in. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they 
             are taken as interchangeable and therefore as referring to same.
-          </p> 
+          </p>
         </ScrollReveal>
 
-        <ScrollReveal><h3 className="font-semibold text-2xl">Cookies</h3></ScrollReveal>
         <ScrollReveal>
-        <p>
-          We employ the use of cookies. By accessing Skorpion Digi Solutions, you agreed to use cookies in agreement with the 
-          Skorpion Digi Solutions's Privacy Policy.
-        </p>
+          <h3 className="font-semibold text-2xl">Cookies</h3>
         </ScrollReveal>
         <ScrollReveal>
           <p>
-            Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our 
-            website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our 
+            We employ the use of cookies. By accessing {name}, you agreed to use cookies in agreement with the{' '}
+            {name}'s Privacy Policy.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal>
+          <p>
+            Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our
+            website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our
             affiliate/advertising partners may also use cookies.
           </p>
         </ScrollReveal>
 
-        <ScrollReveal><h3 className="font-semibold text-2xl">License</h3></ScrollReveal>
         <ScrollReveal>
-        <p>
-          Unless otherwise stated, Skorpion Digi Solutions and/or its licensors own the intellectual property rights for 
-          all material on Skorpion Digi Solutions. All intellectual property rights are reserved. You may access this from 
-          Skorpion Digi Solutions for your own personal use subjected to restrictions set in these terms and conditions.
-        </p>
+          <h3 className="font-semibold text-2xl">License</h3>
         </ScrollReveal>
         <ScrollReveal>
           <p>
-            You must not: Republish material from Skorpion Digi Solutions Sell, rent or sub-license material from Skorpion Digi 
-            Solutions Reproduce, duplicate or copy material from Skorpion Digi Solutions edistribute content from Skorpion Digi 
-            Solutions
+            Unless otherwise stated, {name} and/or its licensors own the intellectual property rights for all material on{' '}
+            {name}. All intellectual property rights are reserved. You may access this from {name} for your own
+            personal use subjected to restrictions set in these terms and conditions.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal>
+          <p>
+            You must not: Republish material from {name} Sell, rent or sub-license material 
+            from {name} Reproduce, duplicate or copy material from {name} edistribute content from {name}
           </p>
         </ScrollReveal>
         <ScrollReveal>
           <p>
             Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of 
-            the website. Skorpion Digi Solutions does not filter, edit, publish or review Comments prior to their presence on the 
-            website. Comments do not reflect the views and opinions of Skorpion Digi Solutions its agents and/or affiliates. Comments 
-            reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, 
-            Skorpion Digi Solutions shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered 
+            the website. {name} does not filter, edit, publish or review Comments prior to their presence on the 
+            website. Comments do not reflect the views and opinions of {name} its agents and/or affiliates. Comments 
+            reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable 
+            laws, {name} shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered 
             as a result of any use of and/or posting of and/or appearance of the Comments on this website.
           </p>
         </ScrollReveal>
         <ScrollReveal>
           <p>
-            Skorpion Digi Solutions reserves the right to monitor all Comments and to remove any Comments which can be considered 
+            {name} reserves the right to monitor all Comments and to remove any Comments which can be considered 
             inappropriate, offensive or causes breach of these Terms and Conditions.
           </p>
         </ScrollReveal>
@@ -95,63 +143,8 @@ const TermsAndConditions = () => {
         </ScrollReveal>
         <ScrollReveal>
           <p>
-            You hereby grant Skorpion Digi Solutions a non-exclusive license to use, reproduce, edit and authorize others to use, 
+            You hereby grant {name} a non-exclusive license to use, reproduce, edit and authorize others to use, 
             reproduce and edit any of your Comments in any and all forms, formats or media.
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal><h3 className="font-semibold text-2xl">Hyperlinking to our Content</h3></ScrollReveal>
-        <ScrollReveal>
-        <p>
-          The following organizations may link to our Website without prior written approval: Government agencies, Search engines, 
-          News organizations, Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites 
-          of other listed businesses and System wide Accredited Businesses except soliciting non-profit organizations, charity shopping 
-          malls, and charity fundraising groups which may not hyperlink to our Web site.
-        </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            These organizations may link to our home page, to publications or to other Website information so long as the link: (a) is 
-            not in any way deceptive, (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its 
-            products and/or services and (c) fits within the context of the linking party's site.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            We may consider and approve other link requests from the following types of organizations: commonly-known consumer and/or 
-            business information sources, dot.com community sites, associations or other groups representing charities, online directory 
-            distributors, internet portals, accounting, law and consulting firms and educational institutions and trade associations.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably 
-            to ourselves or to our accredited businesses, (b) the organization does not have any negative records with us, (c) the 
-            benefit to us from the visibility of the hyperlink compensates the absence of Skorpion Digi Solutions and (d) the link 
-            is in the context of general resource information.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            These organizations may link to our home page so long as the link: (a) is not in any way deceptive, (b) does not falsely 
-            imply sponsorship, endorsement or approval of the linking party and its products or services and (c) fits within the 
-            context of the linking party's site.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must 
-            inform us by sending an e-mail to Skorpion Digi Solutions . Please include your name, your organization name, contact 
-            information as well as the URL of your site, a list of any URLs from which you intend to link to our Website and a list 
-            of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <p>
-            Approved organizations may hyperlink to our Website as follows: By use of our corporate name or By use of the uniform 
-            resource locator being linked to or By use of any other description of our Website being linked to that makes sense 
-            within the context and format of content on the linking party's site. No use of Skorpion Digi Solutions logo or other 
-            artwork will be allowed for linking absent a trademark license agreement.
           </p>
         </ScrollReveal>
 
@@ -217,10 +210,10 @@ const TermsAndConditions = () => {
         <ScrollReveal>
           <p>
             Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of 
-            the website. Skorpion Digi Solutions does not filter, edit, publish or review Comments prior to their presence on the 
-            website. Comments do not reflect the views and opinions of Skorpion Digi Solutions, its agents and/or affiliates. Comments 
-            reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, 
-            Skorpion Digi Solutions shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered 
+            the website. {name} does not filter, edit, publish or review Comments prior to their presence on the 
+            website. Comments do not reflect the views and opinions of {name}, its agents and/or affiliates. Comments 
+            reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable 
+            laws, {name} shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered 
             as a result of any use of and/or posting of and/or appearance of the Comments on this website.
           </p>
         </ScrollReveal>
@@ -240,4 +233,4 @@ const TermsAndConditions = () => {
   );
 };
 
-export default TermsAndConditions;
+export default ShopTermsSection;

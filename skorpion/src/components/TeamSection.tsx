@@ -70,9 +70,9 @@ const TeamSection = () => {
         </div>
       </div>
 
-      <div className="hidden xl:block w-full xl:w-1/2 relative">
+      <div className="hidden xl:flex w-full xl:w-1/2 relative items-center justify-center">
         <div className="grid grid-cols-2 gap-10 mt-0">
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               <ScrollReveal>
               <div className="w-[220px] h-[280px] relative group overflow-hidden">
                 <Image

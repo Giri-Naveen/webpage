@@ -68,7 +68,7 @@ const PaymentPolicy = () => {
           By entrusting your payments to Skorpion Digi Solutions, we aim to give you the confidence that your financial transactions 
           on our platform are handled with the utmost care and security. Your satisfaction and trust in our payment services are of 
           paramount importance to us. If you have any questions or require further assistance, please do not hesitate to contact us 
-          at info@skorpion.in
+          at <a href="mailto:info@skorpion.in" className='text-blue-600'> info@skorpion.in</a>
         </p>
         </ScrollReveal>
       </div>

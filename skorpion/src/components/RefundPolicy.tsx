@@ -43,10 +43,10 @@ const RefundPolicy = () => {
         </p>
         <p>
           <strong>Email: </strong>
-          <a href="mailto:info@skorpion.in">info@skorpion.in</a>
+          <a href="mailto:info@skorpion.in" className='text-blue-600'>info@skorpion.in</a>
           <br />
           <strong>Phone: </strong>
-          <a href="tel:+919600052850"> +91-96000-52850 </a>
+          <a href="tel:+919600052850" className='text-blue-600'> +91-96000-52850 </a>
         </p>
         </ScrollReveal>
       </div>

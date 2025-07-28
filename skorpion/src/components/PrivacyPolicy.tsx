@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
         <ScrollReveal>
             <p>
             If you have any queries or suggestions about our Privacy Policy, contact us at 
-            <a href="mailto:info@skorpion.in"> info@skorpion.in</a>
+            <a href="mailto:info@skorpion.in" className='text-blue-600'> info@skorpion.in</a>
             </p>
         </ScrollReveal>
         <ScrollReveal>
