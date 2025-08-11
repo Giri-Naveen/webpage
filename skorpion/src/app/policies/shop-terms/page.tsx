@@ -2,7 +2,7 @@
 import { useSearchParams } from 'next/navigation';
 import FixedUI from "@/components/FixedUI";
 import TermsAndConditionHeader from "@/components/TermsAndConditionHeader";
-import ShopTerms from "@/components/ShopTermsSection";
+import ShopTermsSection from "@/components/ShopTermsSection";
 import Footer from "@/components/Footer";
 import FirstSection from "@/components/FirstSection";
 
@@ -15,7 +15,7 @@ export default function ShopTermsPage() {
       <FirstSection />
       <FixedUI />
       <TermsAndConditionHeader />
-      <ShopTerms shopName={shopName} />
+      <ShopTermsSection shopName={shopName} />
       <Footer />
     </main>
   );

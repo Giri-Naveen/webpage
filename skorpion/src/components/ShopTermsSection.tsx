@@ -15,12 +15,24 @@ type ShopTermsSectionProps = {
 
 const ShopTermsSection = ({ shopName }: ShopTermsSectionProps) => {
   const [shopData, setShopData] = useState<ShopData | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-  if (shopName) {
-    fetch(`https://api.skorpion.in/fetchShopDetails?shopName=${shopName}`)
-      .then(res => res.json())
-      .then(data => {
+   useEffect(() => {
+    console.log('shopName:', shopName);
+    if (!shopName) return;
+
+    const fetchShopData = async () => {
+      setError(null);
+      setLoading(true);
+      try {
+        const res = await fetch(`https://api.skorpion.in/fetchShopDetails?shopName=${shopName}`);
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`API returned status ${res.status}: ${text}`);
+        }
+        const data = await res.json();
+
         if (data?.shopName) {
           setShopData({
             shopName: data.shopName,
@@ -29,17 +41,24 @@ const ShopTermsSection = ({ shopName }: ShopTermsSectionProps) => {
             phoneNumber: data.contactNumber,
           });
         } else {
-          console.error("Invalid response from API");
+          setError("Invalid API response: Missing shopName");
+          setShopData(null);
         }
-      })
-      .catch(err => {
-        console.error("Error fetching company data:", err);
-      });
-  }
-}, [shopName]);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Unknown error");
+        setShopData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchShopData();
+  }, [shopName]);
 
-  if (!shopData) return <p>No Shop Data</p>;
-
+  if (loading) return <p>Loading shop data...</p>;
+  //if (error) return <p className="text-red-600">Error: {error}</p>;
+  if (!shopData) return <p>No Shop Data available</p>;
+  
   const { shopName: name, phoneNumber: phone } = shopData;
 
   return (

@@ -20,7 +20,7 @@ const LoadingScreen = () => {
       >
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
           <motion.div
-            className="absolute flex gap-4 text-white text-3xl md:text-5xl font-semibold overflow-hidden"
+            className="absolute flex gap-[10px] md:gap-[13px] lg:gap-4 text-white text-3xl md:text-5xl font-semibold overflow-hidden"
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 0, y: -60 }}
             transition={{ delay: 1.5, duration: 0.8 }}
@@ -92,32 +92,3 @@ const LoadingScreen = () => {
 };
 
 export default LoadingScreen;
-
-
-
-
-
-{ /*
-
-div className="relative w-[400px] h-full flex items-center justify-center">
-              <motion.div
-                className="absolute w-[200px] h-full overflow-hidden"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{
-                  delay: 2.3,
-                  duration: 0.4,
-                  ease: 'easeInOut',
-                }}
-                style={{ transformOrigin: 'left' }}
-              >
-                <Image
-                  src="/images/white_logo.png"
-                  alt="Loading Image"
-                  fill
-                  className="object-fill"
-                />
-              </motion.div>
-
-
-*/}
