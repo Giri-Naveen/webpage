@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from "react";
+import { Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import BlogFiveImage from "@/components/BlogFiveImage";
 import BlogFiveContent from "@/components/BlogFiveContent";
@@ -17,7 +18,9 @@ export default function BlogFive() {
   return (
     <main>
       <Navigation />
-      <BlogFiveImage />
+      <Suspense fallback={<div>Loading image...</div>}>
+        <BlogFiveImage />
+      </Suspense>
       <BlogFiveContent />
       <BlogFiveOther />
       <Footer />
